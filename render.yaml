@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: hearties-social-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MONGO_URL
+        value: mongodb+srv://hectorino747_db_user:ilINbklOSQTFQCeR@cluster0.pw0mfrf.mongodb.net/hearties_social?retryWrites=true&w=majority
+      - key: DB_NAME
+        value: hearties_social
+      - key: SECRET_KEY
+        value: hearties_social_super_secret_key_2024_production
+    healthCheckPath: /api/health
